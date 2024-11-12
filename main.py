@@ -27,14 +27,14 @@ type_defs = gql ("""
     
     type Mutation {
         createAuthor(name:String!): Author!
-        updateAuthor(id: ID!, name: String): Author!
-        deleteAuthor(id:ID!): Boolean!
+        updateAuthor(id: Int!, name: String): Author!
+        deleteAuthor(id:Int!): Boolean!
     
                  
 
-    createBook(title:String!, authorsIds: [ID!]!): Book!
-    updateBook(id: ID!, title: String!, authorIds:[ID!]!): Book!
-    deleteBook(id: ID!) : Boolean!
+    createBook(title:String!, authorsIds: [Int!]!): Book!
+    updateBook(id: Int!, title: String!, authorIds:[Int!]!): Book!
+    deleteBook(id: Int!) : Boolean!
     }                          
 """)
 schema = make_executable_schema(type_defs, query, mutation)
